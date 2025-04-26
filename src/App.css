@@ -1,3 +1,12 @@
+:root {
+  --text: #06050e;
+  --background: #e9e9f9;
+  --background-100: #d9d7f6;
+  --primary: #4940ca;
+  --secondary: #9792e5;
+  --accent: #6057dd;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,27 +14,35 @@
 }
 body {
   padding: 25px;
-  background-color: #9aa0af;
+  background-color: var(--background);
 }
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
 .container-card {
   direction: ltr;
 }
 .title {
-  color: #000;
+  color: var(--text);
   margin-left: 8px;
 }
 .card {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px));
   gap: 20px;
-  /* background-color: #a7adbb;
+  /* background-color: var(--background);
   padding: 20px; */
 }
 .card-item {
-  background-color: #c0c6d5;
+  background-color: var(--background-100);
   padding: 16px;
   border-radius: 8px;
-  color: #000;
+  color: var(--text);
+
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   position: relative;
@@ -45,7 +62,7 @@ body {
 }
 
 .EllipsisH-icon:hover {
-  background-color: #9aa0af;
+  background-color: var(--background);
 }
 .card-item img {
   height: 40px;
@@ -79,27 +96,28 @@ strong {
 }
 .filter-btn button {
   padding: 8px 16px;
-  color: black;
-  border: 1px solid #ccc;
+  color: var(--text);
+  border: 1px solid var(--background-100);
   cursor: pointer;
   font-size: 18px;
-  background-color: #9aa0af;
+  background-color: var(--background);
+
   border-radius: 18px;
   outline: none;
   transition: background-color 0.3s ease;
 }
 .filter-btn button.active {
-  background-color: green;
+  color: var(--background);
+  background-color: var(--primary);
   border: none;
-  color: white;
 }
 .btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   padding: 10px 20px;
-  color: black;
-  background-color: #c0c6d5;
+  color: var(--background);
+  background-color: var(--primary);
   border: none;
   cursor: pointer;
   font-size: 16px;
@@ -114,7 +132,7 @@ strong {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background-color: #9aa0af;
+  background-color: var(--background);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -127,11 +145,11 @@ strong {
   text-align: left;
   font-size: 16px;
   cursor: pointer;
-  color: #000;
-  background-color: #9aa0af;
+  color: var(--text);
+  background-color: var(--background);
 }
 .dropdown-menu button:hover {
-  background-color: #99d1df4f;
+  background-color: var(--secondary);
 }
 
 .modal-overlay {
@@ -148,9 +166,9 @@ strong {
 }
 
 .modal-container {
-  background-color: #99d1df4f;
+  background-color: var(--background);
   padding: 20px;
-  color: aliceblue;
+  color: var(--text);
   border-radius: 8px;
   max-width: 1020px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -163,11 +181,11 @@ strong {
   display: block;
   margin-top: 10px;
   margin-bottom: 5px;
-  color: #333;
+  color: var(--text);
   min-width: 450px;
 }
 .modal-container label {
-  color: #000;
+  color: var(--text);
 }
 .modal-container input,
 .modal-container select {
@@ -175,9 +193,9 @@ strong {
   padding: 8px;
   margin-bottom: 10px;
   border-radius: 4px;
-  color: #000;
-  border: 1px solid #c0c6d5;
-  background-color: #c0c6d5;
+  color: var(--text);
+  border: 1px solid var(--secondary);
+  background-color: var(--background-100);
   outline: none;
 }
 .action-btn {
@@ -187,8 +205,8 @@ strong {
 .action-btn button {
   width: 48%;
   padding: 10px 20px;
-  background-color: #c0c6d5;
-  color: black;
+  background-color: var(--primary);
+  color: var(--background);
   border: none;
   border-radius: 10px;
   cursor: pointer;
