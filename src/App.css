@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 25px;
+  background-color: #9aa0af;
+}
+.container-card {
+  direction: ltr;
+}
+.title {
+  color: #000;
+  margin-left: 8px;
+}
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px));
+  gap: 20px;
+  /* background-color: #a7adbb;
+  padding: 20px; */
+}
+.card-item {
+  background-color: #c0c6d5;
+  padding: 16px;
+  border-radius: 8px;
+  color: #000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  padding-right: 60px;
+}
+.EllipsisH-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.EllipsisH-icon:hover {
+  background-color: #9aa0af;
+}
+.card-item img {
+  height: 40px;
+  width: auto;
+  /* margin-bottom: 10px; */
+  border-radius: 20px;
+  object-fit: contain;
+}
+.card-logo-title {
+  display: flex;
+  gap: 15px;
+}
+.card-status-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-item p {
+  margin-left: 60px;
+}
+strong {
+  text-transform: capitalize;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  text-transform: capitalize;
+}
+.filter-btn button {
+  padding: 8px 16px;
+  color: black;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #9aa0af;
+  border-radius: 18px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+.filter-btn button.active {
+  background-color: green;
+  border: none;
+  color: white;
+}
+.btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  color: black;
+  background-color: #c0c6d5;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+  z-index: 1100;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #9aa0af;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.dropdown-menu button {
+  width: 100%;
+  padding: 8px 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  color: #000;
+  background-color: #9aa0af;
+}
+.dropdown-menu button:hover {
+  background-color: #99d1df4f;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-container {
+  background-color: #99d1df4f;
+  padding: 20px;
+  color: aliceblue;
+  border-radius: 8px;
+  max-width: 1020px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal-container h2 {
+  margin-bottom: 20px;
+}
+.modal-container label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #333;
+  min-width: 450px;
+}
+.modal-container label {
+  color: #000;
+}
+.modal-container input,
+.modal-container select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: #000;
+  border: 1px solid #c0c6d5;
+  background-color: #c0c6d5;
+  outline: none;
+}
+.action-btn {
+  display: flex;
+  gap: 16px;
+}
+.action-btn button {
+  width: 48%;
+  padding: 10px 20px;
+  background-color: #c0c6d5;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+}
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
