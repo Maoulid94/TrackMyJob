@@ -1,5 +1,5 @@
 import React, { use, useEffect, useState } from "react";
-import ActionButton from "./actionButton";
+import ActionButton from "./ActionButton";
 interface Props {
   setShowModal: (values: boolean) => void;
   editingJob?: DataType | null;
