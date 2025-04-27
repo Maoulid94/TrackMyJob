@@ -1,0 +1,149 @@
+/* Card */
+.container-card {
+  /* width: 100%; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.container-card {
+  direction: ltr;
+}
+.title {
+  color: var(--text);
+  margin-left: 8px;
+}
+.card {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px)); */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.card-item {
+  background-color: var(--background-100);
+  padding: 16px;
+  border-radius: 8px;
+  color: var(--text);
+  width: 850px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  padding-right: 60px;
+}
+.card-item img {
+  height: 40px;
+  width: auto;
+  border-radius: 20px;
+  object-fit: contain;
+}
+.card-logo-title {
+  display: flex;
+  gap: 20px;
+}
+.card-status-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-items: center;
+}
+strong {
+  text-transform: capitalize;
+}
+.empty-card {
+  display: flex;
+  width: 850px;
+  font-size: 20px;
+  color: var(--text);
+  visibility: hidden;
+}
+/* Tablet */
+@media (max-width: 1024px) {
+  .card-item {
+    width: 650px;
+  }
+  .empty-card {
+    width: 650px;
+  }
+}
+/* Phome */
+@media (max-width: 600px) {
+  .card-item {
+    width: 90%;
+  }
+  .empty-card {
+    width: 90%;
+  }
+  .filter-btn {
+    gap: 5px;
+  }
+  .filter-btn button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .job-title,
+  .modal-container h2 {
+    font-size: 14px;
+  }
+  .text,
+  .modal-container input,
+  .modal-container select {
+    font-size: 12px;
+  }
+  .card-status-time {
+    gap: 5px;
+    font-size: 12px;
+  }
+  .modal-container {
+    width: 90%;
+  }
+}
+
+/* Icons update and delete */
+.EllipsisH-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.EllipsisH-icon:hover {
+  background-color: var(--background);
+}
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--background);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.dropdown-menu button {
+  width: 100%;
+  padding: 8px 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--text);
+  background-color: var(--background);
+}
+.dropdown-menu button:hover {
+  background-color: var(--secondary);
+}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa";
-import "./App.css";
+import "./styles/App.css";
+import "./styles/ListCard.css";
 import AddModalForm from "./components/AddModalForm";
-import { StatusJob } from "./components/StatusJob";
 import { ListCart } from "./components/ListCard";
+import { StatusJob } from "./components/StatusJob";
 
 interface DataType {
   id: number;
@@ -25,7 +26,7 @@ const Card = () => {
   const handleFilterJob = data.filter(
     (job) => job.status.toLowerCase() === filterStatus
   );
-
+  // Fetch Data from localStorage
   const fetchData = () => {
     try {
       const saved = localStorage.getItem("FormData");
