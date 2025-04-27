@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { FaPlus, FaEllipsisH, FaEdit, FaTrash } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import "./App.css";
 import AddModalForm from "./components/AddModalForm";
+import { StatusJob } from "./components/StatusJob";
+import { ListCart } from "./components/ListCard";
 
 interface DataType {
   id: number;
@@ -81,36 +83,13 @@ const Card = () => {
     <div className="container-card">
       <h2 className="title">My Jobs</h2>
       {data.length > 0 ? (
-        <div className="filter-btn">
-          <button
-            className={filterStatus === "applied" ? "active" : ""}
-            onClick={() => setfilterStatus("applied")}
-          >
-            Applied
-          </button>
-          <button
-            className={filterStatus === "in progress" ? "active" : ""}
-            onClick={() => setfilterStatus("in progress")}
-          >
-            In Progress
-          </button>
-          <button
-            className={filterStatus === "offer" ? "active" : ""}
-            onClick={() => setfilterStatus("offer")}
-          >
-            Offer
-          </button>
-          <button
-            className={filterStatus === "rejected" ? "active" : ""}
-            onClick={() => setfilterStatus("rejected")}
-          >
-            Rejected
-          </button>
-        </div>
+        <StatusJob
+          filterStatus={filterStatus}
+          setfilterStatus={setfilterStatus}
+        />
       ) : null}
-
       <button
-        className="btn"
+        className="add-btn"
         onClick={() => {
           setShowModal(true);
         }}
@@ -124,60 +103,17 @@ const Card = () => {
           clearEditingJob={clearEditingJob}
         />
       )}
-      <div className="card">
-        {handleFilterJob.length === 0 && <p>No cards found.</p>}
-        {handleFilterJob.map((item) => (
-          <div key={item.id} className="card-item">
-            <div className="EllipsisH-icon">
-              <FaEllipsisH
-                size={16}
-                onClick={() => {
-                  handleMenuClick(item.id);
-                }}
-              />
-            </div>
-
-            {/* Dropdown Menu for updated and deleted */}
-            {openMenuItem === item.id && (
-              <div className="dropdown-menu">
-                <button onClick={() => handleEdit(item.id)}>
-                  <FaEdit style={{ marginRight: "8px" }} />
-                  Edit
-                </button>
-                <button
-                  onClick={() => {
-                    handleDelete(item.id);
-                  }}
-                >
-                  <FaTrash style={{ marginRight: "8px" }} />
-                  Delete
-                </button>
-              </div>
-            )}
-
-            <div className="card-logo-title">
-              <img src={item.logo} alt="logo of company" />
-              <h3 className="job-title">{item.title}</h3>
-            </div>
-            <p>{item.company}</p>
-            <p>{item.location}</p>
-            <p className="card-status-time">
-              <strong>{item.status}</strong> <br />
-              <small>{item.time}</small>
-            </p>
-          </div>
-        ))}
-      </div>
+      <ListCart
+        openMenuItem={openMenuItem}
+        handleFilterJob={handleFilterJob}
+        handleDelete={handleDelete}
+        handleEdit={handleEdit}
+        handleMenuClick={handleMenuClick}
+      />
     </div>
   );
 };
-
 const App = () => {
-  return (
-    <>
-      <Card />
-    </>
-  );
+  return <Card />;
 };
-
 export default App;
