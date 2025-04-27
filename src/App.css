@@ -103,15 +103,28 @@ body {
 strong {
   text-transform: capitalize;
 }
+.empty-card {
+  display: flex;
+  width: 850px;
+  font-size: 20px;
+  color: var(--text);
+  visibility: hidden;
+}
 /* Tablet */
 @media (max-width: 1024px) {
   .card-item {
+    width: 650px;
+  }
+  .empty-card {
     width: 650px;
   }
 }
 /* Phome */
 @media (max-width: 600px) {
   .card-item {
+    width: 90%;
+  }
+  .empty-card {
     width: 90%;
   }
   .filter-btn {

@@ -18,7 +18,7 @@ export const ListCart = ({
 }: Props) => {
   return (
     <div className="card">
-      {handleFilterJob.length === 0 && <p>No cards found.</p>}
+      {handleFilterJob.length === 0 && <p className="empty-card">No cards found.</p>}
       {handleFilterJob.map((item) => (
         <div key={item.id} className="card-item">
           <div className="EllipsisH-icon">
